@@ -16,9 +16,31 @@ struct Color{
 	template<typename T>
 	Color(T a, T b, T c){
 		R = a > 255 ? 255 : (double)a;
+		R = R < 0 ? 0 : R;
+		
 		G = b > 255 ? 255 : (double)b;
+		G = G < 0 ? 0 : G;
+		
 		B = c > 255 ? 255 : (double)c;
+		B = B < 0 ? 0 : B;
 	}
+
+	/*	Allows Color operations as well as ensures that colors are in range [0, 255] after every operation. Uncomment to use 
+	Color operator + (Color c){return Color(R+c.R, G+c.G, B+c.B);}
+	Color operator - (Color c){return Color(R-c.R, G-c.G, B-c.B);}
+	Color operator * (Color c){return Color(R*c.R, G*c.G, B*c.B);}
+	Color operator / (Color c){return Color(R/c.R, G/c.G, B/c.B);}
+
+	template<typename T>
+	Color operator + (T x){return Color(R+x, G+x, B+x);}
+	template<typename T>
+	Color operator - (T x){return Color(R-x, G-x, B-x);}
+	template<typename T>
+	Color operator * (T x){return Color(R*x, G*x, B*x);}
+	template<typename T>
+	Color operator / (T x){return Color(R/x, G/x, B/x);}
+	*/
+
 	double R;
 	double G;
 	double B;
