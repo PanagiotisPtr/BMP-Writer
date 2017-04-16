@@ -1,3 +1,6 @@
+#ifndef BMP_WRITER_H
+#define BMP_WRITER_H
+
 #include <cstdio>
 #include <vector>
 #include <string>
@@ -83,3 +86,5 @@ void write_bmp(const std::string &filename, const unsigned &dpi, const std::vect
 	}
 	fclose(f);
 }
+
+#endif
